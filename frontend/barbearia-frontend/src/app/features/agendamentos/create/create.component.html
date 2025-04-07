@@ -1,0 +1,49 @@
+<div class="container">
+  <h2>Novo Agendamento</h2>
+
+  <form [formGroup]="agendamentoForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Cliente</mat-label>
+      <mat-select formControlName="clienteId" required>
+        @for (cliente of clientes$ | async; track cliente.id) {
+          <mat-option [value]="cliente.id">{{ cliente.nome }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Data e Hora</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dataHora" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Serviço</mat-label>
+      <input matInput formControlName="servico" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Barbeiro</mat-label>
+      <mat-select formControlName="barbeiro" required>
+        @for (barbeiro of barbeiros; track barbeiro) {
+          <mat-option [value]="barbeiro">{{ barbeiro }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Observações</mat-label>
+      <textarea matInput formControlName="observacoes" rows="3"></textarea>
+    </mat-form-field>
+
+    <div class="button-group">
+      <button mat-raised-button color="primary" type="submit" [disabled]="agendamentoForm.invalid">
+        Agendar
+      </button>
+      <button mat-button type="button" routerLink="/agendamentos">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

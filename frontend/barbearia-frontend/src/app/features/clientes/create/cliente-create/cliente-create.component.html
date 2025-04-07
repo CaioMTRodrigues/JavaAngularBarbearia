@@ -1,0 +1,43 @@
+<!-- features/clientes/create/client-create.component.html -->
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h2>Novo Cliente</h2>
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input matInput formControlName="nome" required>
+    @if (form.controls.nome.invalid) {
+      <mat-error>Nome é obrigatório</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Telefone</mat-label>
+    <input matInput formControlName="telefone" required>
+    @if (form.controls.telefone.invalid) {
+      <mat-error>Telefone inválido</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email">
+    @if (form.controls.email.invalid) {
+      <mat-error>Email inválido</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Data de Nascimento</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dataNascimento">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <div class="actions">
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+      Salvar
+    </button>
+    <button mat-button type="button" routerLink="/clientes">
+      Cancelar
+    </button>
+  </div>
+</form>

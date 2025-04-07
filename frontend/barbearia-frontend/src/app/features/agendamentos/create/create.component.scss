@@ -1,0 +1,85 @@
+
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+mat-form-field {
+  width: 100%;
+
+  &.w-100 {
+    width: 100%;
+  }
+
+  textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 24px;
+
+  button[type="submit"] {
+    min-width: 120px;
+    padding: 0 24px;
+  }
+}
+
+// Ajustes para o datepicker
+.mat-datepicker-toggle {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+// Estilo para os selects
+mat-select {
+  &.mat-select {
+    padding: 12px 0;
+  }
+}
+
+// Validação
+mat-error {
+  font-size: 12px;
+}
+
+// Responsividade
+@media (max-width: 600px) {
+  .container {
+    padding: 16px;
+  }
+
+  .button-group {
+    flex-direction: column-reverse;
+    gap: 8px;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+// Efeitos de hover e foco
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+}
+
+// Estilo para o texto do textarea
+textarea {
+  line-height: 1.5;
+}

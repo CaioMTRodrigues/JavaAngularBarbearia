@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="header">
+    <h2>Agendamentos</h2>
+  </div>
+  <mat-card>
+
+    <table mat-table [dataSource]="dataSource">
+      <!-- Colunas (mantidas como no seu código original) -->
+      <ng-container matColumnDef="cliente">
+        <th mat-header-cell *matHeaderCellDef>Cliente</th>
+        <td mat-cell *matCellDef="let agendamento">{{ agendamento.cliente.nome }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="data">
+        <th mat-header-cell *matHeaderCellDef>Data/Hora</th>
+        <td mat-cell *matCellDef="let agendamento">
+          {{ agendamento.dataHora | date:'dd/MM/yyyy HH:mm' }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="servico">
+        <th mat-header-cell *matHeaderCellDef>Serviço</th>
+        <td mat-cell *matCellDef="let agendamento">{{ agendamento.servico }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="barbeiro">
+        <th mat-header-cell *matHeaderCellDef>Barbeiro</th>
+        <td mat-cell *matCellDef="let agendamento">{{ agendamento.barbeiro }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef>Ações</th>
+        <td mat-cell *matCellDef="let agendamento">
+          <button mat-icon-button color="warn" (click)="cancelarAgendamento(agendamento.id)">
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Linha de cabeçalho -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+      <!-- Linha de dados -->
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <!-- Mensagem quando não há dados -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" [colSpan]="displayedColumns.length">
+          <div class="empty-state">
+            <mat-icon class="empty-icon">calendar_today</mat-icon>
+            <h3>Nenhum agendamento encontrado</h3>
+            <p>Não há agendamentos cadastrados no momento</p>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </mat-card>
+</div>

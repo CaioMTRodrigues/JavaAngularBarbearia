@@ -1,0 +1,36 @@
+<div class="container">
+  <app-agendamento-list></app-agendamento-list>
+
+  <h2>Clientes</h2>
+
+  @if (clientes().length > 0) {
+    @for (cliente of clientes(); track cliente.id) {
+      <mat-card class="mb-2">
+        <mat-card-content>
+          <p><strong>Nome:</strong> {{ cliente.nome }}</p>
+          <p><strong>Telefone:</strong> {{ cliente.telefone }}</p>
+          <p><strong>Email:</strong> {{ cliente.email }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="primary" [routerLink]="['/clientes/editar', cliente.id]">
+            <mat-icon>edit</mat-icon>
+            Editar
+          </button>
+          <button mat-button color="warn" (click)="deleteCliente(cliente.id)">
+            <mat-icon>delete</mat-icon>
+            Excluir
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    }
+  } @else {
+    <mat-card class="empty-state">
+      <mat-card-content class="text-center">
+        <mat-icon class="empty-icon">people_outline</mat-icon>
+        <h3>Nenhum cliente cadastrado</h3>
+        <p>Clique no botão "Novo Cliente" para começar</p>
+      </mat-card-content>
+    </mat-card>
+  }
+</div>
+

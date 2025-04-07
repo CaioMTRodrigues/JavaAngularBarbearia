@@ -1,0 +1,28 @@
+.empty-state {
+  padding: 2rem;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.empty-icon {
+  font-size: 3rem;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+  color: #757575;
+}
+
+.empty-state h3 {
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Ajuste para a célula que contém a mensagem */
+.mat-cell {
+  padding: 2rem !important;
+}
