@@ -1,30 +1,26 @@
-# Barbearia Agendamento - Sistema de Gestão
-
 ![Java](https://img.shields.io/badge/Java-17%2B-blue)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.1-green)
 ![Angular](https://img.shields.io/badge/Angular-16-purple)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue)
 
 ## 📋 Descrição
 Sistema completo para gestão de agendamentos em barbearias, com:
 - Cadastro de clientes e barbeiros
 - Agendamento de serviços
-- Controle de status (ativo/cancelado)
 - Interface administrativa
 
 ## 🛠 Tecnologias
-- **Backend**: 
+- *Backend*: 
   - Java 17
   - Spring Boot 3.1
   - JPA/Hibernate
   - Lombok
 
-- **Frontend**:
-  - Angular 16
+- *Frontend*:
+  - Angular 19
   - Angular Material
   - RxJS
 
-- **Banco de Dados**:
+- *Banco de Dados*:
   - H2 (Desenvolvimento)
 
 ## 🚀 Instalação
@@ -38,4 +34,4 @@ java -version
 node -v
 
 # Angular CLI
-npm install -g @angular/cli
+npm install -g @angular/cli
