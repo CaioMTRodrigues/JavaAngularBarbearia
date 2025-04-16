@@ -1,7 +1,7 @@
 package com.barbearia.demo.service;
 
-import com.barbearia.demo.exception.ResourceNotFoundException;
 import com.barbearia.demo.model.Cliente;
+import com.barbearia.demo.model.exception.ResourceNotFoundException;
 import com.barbearia.demo.repository.ClienteRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

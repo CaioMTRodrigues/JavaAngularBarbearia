@@ -11,7 +11,7 @@ export class ClienteService {
   private http = inject(HttpClient);
   private apiUrl = `${environment.apiUrl}/clientes`;
 
-  // Estado reativo usando Signals (Angular 16+)
+
   private _clientes = signal<Cliente[]>([]);
   clientes = this._clientes.asReadonly();
 
@@ -92,7 +92,7 @@ export class ClienteService {
     return this.http.get<Cliente[]>(this.apiUrl);
   }
 
-  // Versão alternativa com nomes em inglês (caso prefira)
+
   create = this.criar;
   update = this.atualizar;
   delete = this.excluir;

@@ -16,7 +16,7 @@ import { MatTableModule } from '@angular/material/table';
     MatTableModule,
     MatIconModule,
     MatButtonModule,
-    MatCardModule,
+    MatCardModule
   ],
   templateUrl: './client-list.component.html',
   styleUrl: './client-list.component.scss'
